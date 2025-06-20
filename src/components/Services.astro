@@ -1,0 +1,61 @@
+---
+import { Droplets, Wrench, Shield, Clock } from "@lucide/astro";
+
+const services = [
+  {
+    icon: Droplets,
+    title: "Leak Detection & Repair",
+    description:
+      "Fast, accurate leak detection using advanced technology. We fix leaks quickly to prevent water damage and save you money.",
+  },
+  {
+    icon: Wrench,
+    title: "Pipe Installation & Repair",
+    description:
+      "Complete pipe solutions including installation, repair, and replacement. We work with all pipe materials and systems.",
+  },
+  {
+    icon: Shield,
+    title: "Drain Cleaning",
+    description:
+      "Professional drain cleaning services to keep your drains flowing freely. We handle everything from simple clogs to complex blockages.",
+  },
+  {
+    icon: Clock,
+    title: "Emergency Services",
+    description:
+      "24/7 emergency plumbing services. When you have a plumbing emergency, we're here to help any time of day or night.",
+  },
+];
+---
+
+<section id="services" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-display font-bold text-gray-900 mb-4">
+        Our Plumbing Services
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto font-medium">
+        We provide comprehensive plumbing solutions for residential and
+        commercial properties. Our experienced team handles everything from
+        minor repairs to major installations.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {
+        services.map((service) => (
+          <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+            <div class="mb-6">
+              <service.icon class="w-8 h-8 text-blue-600" />
+            </div>
+            <h3 class="text-xl font-display font-bold text-gray-900 mb-4">
+              {service.title}
+            </h3>
+            <p class="text-gray-600 leading-relaxed">{service.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

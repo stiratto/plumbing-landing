@@ -1,0 +1,41 @@
+---
+import { CheckCircle } from "@lucide/astro";
+
+const benefits = [
+  "Licensed & Insured Professionals",
+  "24/7 Emergency Service Available",
+  "Upfront Pricing - No Hidden Fees",
+  "100% Satisfaction Guarantee",
+  "Advanced Diagnostic Equipment",
+  "Eco-Friendly Solutions Available",
+];
+---
+
+<section class="py-20 bg-blue-600">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2
+        id="why-choose-us"
+        class="text-4xl font-display font-bold text-white mb-4"
+      >
+        Why Choose AquaPro?
+      </h2>
+      <p class="text-xl text-blue-100 max-w-3xl mx-auto font-medium">
+        We're committed to providing the highest quality plumbing services with
+        integrity, professionalism, and customer satisfaction as our top
+        priorities.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        benefits.map((benefit) => (
+          <div class="flex items-center space-x-4 bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+            <CheckCircle class="w-6 h-6 text-orange-400 flex-shrink-0" />
+            <span class="text-white font-medium">{benefit}</span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
