@@ -1,5 +1,5 @@
 ---
-import { CheckCircle } from "@lucide/astro";
+import { CheckCircle } from "lucide-react";
 
 const benefits = [
   "Licensed & Insured Professionals",
@@ -31,7 +31,10 @@ const benefits = [
       {
         benefits.map((benefit) => (
           <div class="flex items-center space-x-4 bg-white/10 backdrop-blur-sm p-6 rounded-lg">
-            <CheckCircle class="w-6 h-6 text-orange-400 flex-shrink-0" />
+            <CheckCircle
+              className="w-6 h-6 text-orange-400 flex-shrink-0"
+              client:load
+            />
             <span class="text-white font-medium">{benefit}</span>
           </div>
         ))

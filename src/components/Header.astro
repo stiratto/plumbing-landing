@@ -1,5 +1,5 @@
 ---
-import { Phone, Menu, X, Wrench } from "@lucide/astro";
+import { Phone, Menu, X, Wrench } from "lucide-react";
 
 const items = [
   {
@@ -18,12 +18,12 @@ const items = [
 ---
 
 <header
-  class="bg-[#DDE7EB] shadow-sm fixed w-full top-0 z-50 flex items-center justify-center justify-between"
+  class="bg-lightgreen shadow-sm fixed w-full top-0 z-50 flex items-center justify-center justify-between"
 >
   <div class="w-full mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center py-4">
       <div class="flex items-center space-x-2">
-        <Wrench class="w-8 h-8 text-blue-600" />
+        <Wrench className="w-8 h-8 text-blue-600" client:load />
       </div>
 
       <!-- Desktop Navigation -->
@@ -44,7 +44,7 @@ const items = [
 
       <div class="hidden lg:flex items-center space-x-4">
         <div class="flex items-center space-x-2 text-gray-600">
-          <Phone class="w-4 h-4" />
+          <Phone className="w-4 h-4" client:load />
           <span class="font-semibold">(555) 123-PIPE</span>
         </div>
       </div>
@@ -71,7 +71,7 @@ const items = [
           ))
         }
         <div class="flex items-center space-x-2 text-gray-600 pt-2">
-          <Phone class="w-4 h-4" />
+          <Phone className="w-4 h-4" client:load />
           <span class="font-semibold">(555) 123-PIPE</span>
         </div>
       </nav>
@@ -157,7 +157,7 @@ const items = [
   };
 
   hamburgerEls.forEach((el) =>
-    el.addEventListener("click", handleListElementClick)
+    el.addEventListener("click", handleListElementClick),
   );
   hamburger?.addEventListener("click", handleClick);
 </script>
